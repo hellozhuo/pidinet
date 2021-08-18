@@ -38,7 +38,7 @@ To create BSDS dataset, please follow:
 2. extract *HED-BSDS.tar.gz* to */path/to/BSDS500/HED-BSDS*,
 3. extract *PASCAL.tar.gz* to */path/to/BSDS500/PASCAL*,
 4. if you want to evaluate on BSDS500 val set, the val images can be downloaded from [this link](https://drive.google.com/file/d/1q0jdUM9PStWT12o1RgTLOKOXN3Ql5OxS/view?usp=sharing), please extract it to */path/to/BSDS500/HED-BSDS/val*,
-5. cp the \**.lst* files in [data/BSDS500/HED-BSDS](data/BSDS500/HED-BSDS) to */path/to/BSDS500/HED-BSDS/*, cp the \**.lst* files in [data/BSDS500](data/BSDS500) to */path/to/BSDS/*.
+5. cp the \**.lst* files in [data/BSDS500/HED-BSDS](data/BSDS500/HED-BSDS) to */path/to/BSDS500/HED-BSDS/*, cp the \**.lst* files in [data/BSDS500](data/BSDS500) to */path/to/BSDS500/*.
 
 To create NYUD dataset, please follow:
 
@@ -70,7 +70,7 @@ python throughput.py --model pidinet_converted --config carv4 --sa --dil -j 0 --
 
 It is similar for other models, please see detailed scripts in [scripts.sh](scripts.sh).
 
-The performance of some of the models are listed below (click the items to download the checkpoints and training logs). FPS metrics are tested on a NVIDIA RTX 2080 Ti, showing slightly faster than that recorded in the paper (you probably get different FPS records in different runs, but will not vary too much):
+The performance of some of the models are listed below (click the items to download the checkpoints and training logs). FPS metrics are tested on a NVIDIA RTX 2080 Ti, showing slightly faster than that recorded in the paper (you probably get different FPS records in different runs, but they will not vary too much):
 
 | Model                  | ODS   | OIS   | FPS | Training logs |
 |------------------------|-------|-------|-----|---------------|
