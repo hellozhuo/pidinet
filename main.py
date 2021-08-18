@@ -18,7 +18,7 @@ import time
 import models
 from models.convert_pidinet import convert_pidinet
 from utils import *
-from edge_dataloader import BSDS_VOCLoader, BSDS_Loader, Multicue_Loader, NYUD_Loader
+from edge_dataloader import BSDS_VOCLoader, BSDS_Loader, Multicue_Loader, NYUD_Loader, Custom_Loader
 from torch.utils.data import DataLoader
 
 import torch
@@ -107,7 +107,7 @@ def main(running_file):
         args.lr_steps = list(map(int, args.lr_steps.split('-'))) 
 
     dataset_setting_choices = ['BSDS', 'NYUD-image', 'NYUD-hha', 'Multicue-boundary-1', 
-                'Multicue-boundary-2', 'Multicue-boundary-3', 'Multicue-edge-1', 'Multicue-edge-2', 'Multicue-edge-3']
+                'Multicue-boundary-2', 'Multicue-boundary-3', 'Multicue-edge-1', 'Multicue-edge-2', 'Multicue-edge-3', 'Custom']
     if not isinstance(args.dataset, list): 
         assert args.dataset in dataset_setting_choices, 'unrecognized data setting %s, please choose from %s' % (str(args.dataset), str(dataset_setting_choices))
         args.dataset = list(args.dataset.strip().split('-')) 
@@ -177,6 +177,9 @@ def main(running_file):
     elif 'NYUD' == args.dataset[0]:
         train_dataset = NYUD_Loader(root=args.datadir, split="train", setting=args.dataset[1:])
         test_dataset = NYUD_Loader(root=args.datadir, split="test", setting=args.dataset[1:])
+    elif 'Custom' == args.dataset[0]:
+        train_dataset = Custom_Loader(root=args.datadir)
+        test_dataset = Custom_Loader(root=args.datadir)
     else:
         raise ValueError("unrecognized dataset setting")
 

@@ -10,13 +10,10 @@ def fold_files(foldname):
     """All files in the fold should have the same extern"""
     allfiles = os.listdir(foldname)
     if len(allfiles) < 1:
+        raise ValueError('No images in the data folder')
         return None
     else:
-        ext = allfiles[0].split('.')[-1]
-        filelist = [
-            fname.replace(''.join(['.', ext]), '') for fname in allfiles
-        ]
-        return ext, filelist
+        return allfiles
 
 class BSDS_Loader(data.Dataset):
     """
@@ -273,31 +270,29 @@ class NYUD_Loader(data.Dataset):
             img_name = Path(img_file).stem
             return img, img_name
 
-class Customer_Loader(data.Dataset):
+class Custom_Loader(data.Dataset):
     """
-    Customer Dataloader
+    Custom Dataloader
     """
     def __init__(self, root='data/'):
-        """
-        There is no threshold for NYUDv2 since it is singlely annotated
-        setting should be 'image' or 'hha'
-        """
         self.root = root
         normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                          std=[0.229, 0.224, 0.225])
         self.transform = transforms.Compose([
             transforms.ToTensor(),
             normalize])
-        _, self.imgList = fold_files(os.path.join(root))
+        self.imgList = fold_files(os.path.join(root))
 
     def __len__(self):
         return len(self.imgList)
     
     def __getitem__(self, index):
 
-        with open(os.path.join(self.root, self.imgList[index] + '.jpg'), 'rb') as f:
+        with open(os.path.join(self.root, self.imgList[index]), 'rb') as f:
             img = Image.open(f)
             img = img.convert('RGB')
         img = self.transform(img)
 
-        return img, self.imgList[index]
+        filename = Path(self.imgList[index]).stem
+
+        return img, filename
