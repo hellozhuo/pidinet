@@ -7,7 +7,7 @@ python main.py --model pidinet --config baseline --sa --dil --resume --iter-size
 python main.py --model pidinet --config baseline --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_baseline --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_baseline.tar
 
 # 101 FPS
-python throughput.py --model pidinet --config baseline --sa --dil -j 0 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
+python throughput.py --model pidinet --config baseline --sa --dil -j 1 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
 
 
 
@@ -19,7 +19,7 @@ python main.py --model pidinet --config carv4 --sa --dil --resume --iter-size 24
 python main.py --model pidinet_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet.tar --evaluate-converted
 
 # 96 FPS
-python throughput.py --model pidinet_converted --config carv4 --sa --dil -j 0 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
+python throughput.py --model pidinet_converted --config carv4 --sa --dil -j 1 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
 
 
 
@@ -31,7 +31,7 @@ python main.py --model pidinet --config carv4 --resume --iter-size 24 -j 4 --gpu
 python main.py --model pidinet_converted --config carv4  -j 4 --gpu 0 --savedir /path/to/table5_pidinet-l --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet-l.tar --evaluate-converted
 
 # 135 FPS
-python throughput.py --model pidinet_converted --config carv4 -j 0 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
+python throughput.py --model pidinet_converted --config carv4 -j 1 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
 
 
 
@@ -43,7 +43,7 @@ python main.py --model pidinet_small --config carv4 --sa --dil --resume --iter-s
 python main.py --model pidinet_small_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet-small --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet-small.tar --evaluate-converted
 
 # 161 FPS
-python throughput.py --model pidinet_small_converted --sa --dil --config carv4 -j 2 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
+python throughput.py --model pidinet_small_converted --sa --dil --config carv4 -j 1 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
 
 
 

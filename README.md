@@ -65,7 +65,7 @@ python main.py --model pidinet --config carv4 --sa --dil -j 4 --gpu 0 --savedir 
 python main.py --model pidinet_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.tar --evaluate-converted
 
 # test FPS on GPU
-python throughput.py --model pidinet_converted --config carv4 --sa --dil -j 0 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
+python throughput.py --model pidinet_converted --config carv4 --sa --dil -j 1 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
 ```
 
 It is similar for other models, please see detailed scripts in [scripts.sh](scripts.sh).
