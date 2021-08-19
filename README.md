@@ -24,7 +24,7 @@ Evaluation: Matlab 2019a
 
 ## Dataset
 
-Please download the augmented BSDS500, PASCAL VOC, and NYUD datasets from the following links:
+We use the links in [RCF Repository](https://github.com/yun-liu/rcf#testing-rcf). The augmented BSDS500, PASCAL VOC, and NYUD datasets can be downloaded with:
 
 ```bash
 wget http://mftp.mmcheng.net/liuyun/rcf/data/HED-BSDS.tar.gz
