@@ -109,7 +109,7 @@ For evaluating NYUD, following [RCF](https://openaccess.thecvf.com/content_cvpr_
 - [RCF](https://github.com/yun-liu/rcf)
 
 ## PR curves
-Please follow [plot-edge-pr-curves](https://github.com/yun-liu/plot-edge-pr-curves), files for plotting pr curves of PiDiNet are provided in [pidinet_pr_curves](pidinet_pr_curves).
+Please follow [plot-edge-pr-curves](https://github.com/MCG-NKU/plot-edge-pr-curves), files for plotting pr curves of PiDiNet are provided in [pidinet_pr_curves](pidinet_pr_curves).
 
 ## Generating edge maps for your own images
 ```bash
