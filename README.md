@@ -8,7 +8,7 @@ by
 [Zitong Yu](https://www.oulu.fi/university/researcher/zitong-yu),
 [Dewen Hu](https://dblp.org/pers/h/Hu:Dewen.html), 
 [Qing Liao](http://liaoqing.me/),
-[Qi Tian](),
+[Qi Tian](https://scholar.google.com/citations?user=61b6eYkAAAAJ&hl=en),
 [Matti Pietikäinen](https://en.wikipedia.org/wiki/Matti_Pietik%C3%A4inen_(academic)) and 
 [Li Liu](http://lilyliliu.com/)\*\* 
 (\* Authors have equal contributions, \*\* Corresponding author). \[[arXiv](https://arxiv.org/abs/2108.07009)\]
@@ -24,7 +24,7 @@ Evaluation: Matlab 2019a
 
 ## Dataset
 
-We use the links in [RCF Repository](https://github.com/yun-liu/rcf#testing-rcf). The augmented BSDS500, PASCAL VOC, and NYUD datasets can be downloaded with:
+We use the links in [RCF Repository](https://github.com/yun-liu/rcf#testing-rcf) (really thanks for that). The augmented BSDS500, PASCAL VOC, and NYUD datasets can be downloaded with:
 
 ```bash
 wget http://mftp.mmcheng.net/liuyun/rcf/data/HED-BSDS.tar.gz
