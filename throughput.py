@@ -107,14 +107,16 @@ def test(test_loader, model, args):
 
     model.eval()
 
-    end = time.time()
+    end = time.perf_counter()
+    torch.cuda.synchronize()
     for idx, (image, img_name) in enumerate(test_loader):
 
         with torch.no_grad():
             image = image.cuda() if args.use_cuda else image
             _, _, H, W = image.shape
             results = model(image)
-    end = time.time() - end
+    torch.cuda.synchronize()
+    end = time.perf_counter() - end
     print('fps: %f' % (len(test_loader) / end))
 
 

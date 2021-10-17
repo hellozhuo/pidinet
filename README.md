@@ -11,9 +11,11 @@ by
 [Qi Tian](https://scholar.google.com/citations?user=61b6eYkAAAAJ&hl=en),
 [Matti Pietikäinen](https://en.wikipedia.org/wiki/Matti_Pietik%C3%A4inen_(academic)) and 
 [Li Liu](http://lilyliliu.com/)\*\* 
-(\* Authors have equal contributions, \*\* Corresponding author). \[[arXiv](https://arxiv.org/abs/2108.07009)\]
+(\* Authors have equal contributions, \*\* Corresponding author). \[[arXiv](https://arxiv.org/abs/2108.07009), [youtube](https://www.youtube.com/watch?v=jEAh_4wm1UU)\]
 
 The writing style of this code is based on [Dynamic Group Convolution](https://github.com/zhuogege1943/dgc).
+
+If you are interested in our work, please consider citing [our paper](pdc.bib). 
 
 ## Running environment
 
