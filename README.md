@@ -15,7 +15,7 @@ by
 
 The writing style of this code is based on [Dynamic Group Convolution](https://github.com/zhuogege1943/dgc).
 
-If you are interested in our work, please consider citing [our paper](pdc.bib). 
+If you find something useful from our work, please consider citing [our paper](pdc.bib). 
 
 ## Running environment
 
@@ -60,11 +60,11 @@ Here we provide the scripts for training the models appeared in the paper. For e
 python main.py --model pidinet --config carv4 --sa --dil --resume --iter-size 24 -j 4 --gpu 0 --epochs 20 --lr 0.005 --lr-type multistep --lr-steps 10-16 --wd 1e-4 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS
 
 # generating edge maps using the original model
-python main.py --model pidinet --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.tar
+python main.py --model pidinet --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.pth
 
 # generating edge maps using the converted model, it should output the same results just like using the original model
 # the process will convert pidinet to vanilla cnn, using the saved checkpoint
-python main.py --model pidinet_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.tar --evaluate-converted
+python main.py --model pidinet_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/table5_pidinet --datadir /path/to/BSDS500 --dataset BSDS --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.pth --evaluate-converted
 
 # test FPS on GPU
 python throughput.py --model pidinet_converted --config carv4 --sa --dil -j 1 --gpu 0 --datadir /path/to/BSDS500 --dataset BSDS
@@ -76,15 +76,15 @@ The performance of some of the models are listed below (click the items to downl
 
 | Model                  | ODS   | OIS   | FPS | Training logs |
 |------------------------|-------|-------|-----|---------------|
-| [table5_baseline](https://drive.google.com/file/d/1u76DjVIz11WZ_yD-1vAr9m97eQZZn1ds/view?usp=sharing)        | 0.798 | 0.816 | 101 |[log](training_logs/table5_baseline.log) |
-| [table5_pidinet](https://drive.google.com/file/d/1pufzm6JJ1HnqvgA2Re1GDm-EJwkMUdN9/view?usp=sharing)         | 0.807 | 0.823 | 96  |[log](training_logs/table5_pidinet.log), [running log](training_logs/table6_pidinet_running.log)|
-| [table5_pidinet-l](https://drive.google.com/file/d/1WImD_SDKnGNTZO3NAA1XKwkF4LPAZJHa/view?usp=sharing)       | 0.800 | 0.815 | 135 |[log](training_logs/table5_pidinet-l.log) |
-| [table5_pidinet-small](https://drive.google.com/file/d/1padidxL2Fgz3wew5NFx_DhiUVQ0MO_1y/view?usp=sharing)   | 0.798 | 0.814 | 161 |[log](training_logs/table5_pidinet-small.log) |
-| [table5_pidinet-small-l](https://drive.google.com/file/d/1sp_kx1CWnBtLgIlh3of5zhUmFYvgTWPF/view?usp=sharing) | 0.793 | 0.809 | 225 |[log](training_logs/table5_pidinet-small-l.log) |
-| [table5_pidinet-tiny](https://drive.google.com/file/d/12KMQ42r45xYRQv3AjW5PYTEdH9wmRYC9/view?usp=sharing)    | 0.789 | 0.806 | 182 |[log](training_logs/table5_pidinet-tiny.log) |
-| [table5_pidinet-tiny-l](https://drive.google.com/file/d/1dTsq6lXeJmCVFcLwRUbBsewzkPeHMsm5/view?usp=sharing)  | 0.787 | 0.804 | 253 |[log](training_logs/table5_pidinet-tiny-l.log ) |
-| [table6_pidinet](https://drive.google.com/file/d/1nsUoUsur3gOmWHoKyMPal6tLI2RzE3-k/view?usp=sharing)         | 0.733 | 0.747 | 66  |[log](training_logs/table6_pidinet.log), [running_log](training_logs/table6_pidinet_running.log)|
-| [table7_pidinet](https://drive.google.com/file/d/1YUtj_Li5TqAkFmls3V3LA7GmAKKZwksH/view?usp=sharing)         | 0.818 | 0.824 | 17  |[log](training_logs/table7_pidinet.log), [running_log](training_logs/table7_pidinet_running.log)|
+| [table5_baseline](trained_models/table5_baseline.pth)        | 0.798 | 0.816 | 101 |[log](training_logs/table5_baseline.log) |
+| [table5_pidinet](trained_models/table5_pidinet.pth)         | 0.807 | 0.823 | 96  |[log](training_logs/table5_pidinet.log), [running log](training_logs/table6_pidinet_running.log)|
+| [table5_pidinet-l](trained_models/table5_pidinet-l.pth)       | 0.800 | 0.815 | 135 |[log](training_logs/table5_pidinet-l.log) |
+| [table5_pidinet-small](trained_models/table5_pidinet-small.pth)   | 0.798 | 0.814 | 161 |[log](training_logs/table5_pidinet-small.log) |
+| [table5_pidinet-small-l](trained_models/table5_pidinet-small-l.pth) | 0.793 | 0.809 | 225 |[log](training_logs/table5_pidinet-small-l.log) |
+| [table5_pidinet-tiny](trained_models/table5_pidinet-tiny.pth)    | 0.789 | 0.806 | 182 |[log](training_logs/table5_pidinet-tiny.log) |
+| [table5_pidinet-tiny-l](trained_models/table5_pidinet-tiny-l.pth)  | 0.787 | 0.804 | 253 |[log](training_logs/table5_pidinet-tiny-l.log ) |
+| [table6_pidinet](trained_models/table6_pidinet.pth)         | 0.733 | 0.747 | 66  |[log](training_logs/table6_pidinet.log), [running_log](training_logs/table6_pidinet_running.log)|
+| [table7_pidinet](trained_models/table7_pidinet.pth)         | 0.818 | 0.824 | 17  |[log](training_logs/table7_pidinet.log), [running_log](training_logs/table7_pidinet_running.log)|
 
 ## Evaluation
 
@@ -115,7 +115,7 @@ Please follow [plot-edge-pr-curves](https://github.com/MCG-NKU/plot-edge-pr-curv
 
 ## Generating edge maps for your own images
 ```bash
-python main.py --model pidinet_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/savedir --datadir /path/to/custom_images --dataset Custom --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.tar --evaluate-converted
+python main.py --model pidinet_converted --config carv4 --sa --dil -j 4 --gpu 0 --savedir /path/to/savedir --datadir /path/to/custom_images --dataset Custom --evaluate /path/to/table5_pidinet/save_models/checkpointxxx.pth --evaluate-converted
 ```
 
 <div align=center>

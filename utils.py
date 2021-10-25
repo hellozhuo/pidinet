@@ -71,7 +71,7 @@ def load_checkpoint(args, running_file):
 
 def save_checkpoint(state, epoch, root, saveID, keep_freq=10):
 
-    filename = 'checkpoint_%03d.pth.tar' % epoch
+    filename = 'checkpoint_%03d.pth' % epoch
     model_dir = os.path.join(root, 'save_models')
     model_filename = os.path.join(model_dir, filename)
     latest_filename = os.path.join(model_dir, 'latest.txt')
@@ -87,7 +87,7 @@ def save_checkpoint(state, epoch, root, saveID, keep_freq=10):
 
     # remove old model
     if saveID is not None and (saveID + 1) % keep_freq != 0:
-        filename = 'checkpoint_%03d.pth.tar' % saveID
+        filename = 'checkpoint_%03d.pth' % saveID
         model_filename = os.path.join(model_dir, filename)
         if os.path.exists(model_filename):
             os.remove(model_filename)
