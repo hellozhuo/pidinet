@@ -17,6 +17,10 @@ The writing style of this code is based on [Dynamic Group Convolution](https://g
 
 If you find something useful from our work, please consider citing [our paper](pdc.bib). 
 
+:rocket: **Updates**:
+- `Dec. 29, 2021`: Add functions with vanilla conv components in [models/ops\_theta.py](models/ops_theta.py)
+- `Aug. 18, 2021`: Load checkpoints in [trained\_models](trained_models)
+
 ## Running environment
 
 Training: Pytorch 1.9 with cuda 10.1 and cudnn 7.5 in an Ubuntu 18.04 system <br>
