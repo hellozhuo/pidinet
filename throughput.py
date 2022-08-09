@@ -82,6 +82,11 @@ def main():
 
     ### Transfer to cuda devices
     if args.use_cuda:
+        if args.model == 'hed':
+            model.weight_deconv2 = model.weight_deconv2.cuda()
+            model.weight_deconv3 = model.weight_deconv3.cuda()
+            model.weight_deconv4 = model.weight_deconv4.cuda()
+            model.weight_deconv5 = model.weight_deconv5.cuda()
         model = torch.nn.DataParallel(model).cuda()
         print('cuda is used, with %d gpu devices' % torch.cuda.device_count())
     else:
