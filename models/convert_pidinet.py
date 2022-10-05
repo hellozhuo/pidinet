@@ -34,6 +34,7 @@ def convert_pidinet(state_dict, config):
     pdcs = config_model_converted(config)
     new_dict = {}
     for pname, p in state_dict.items():
+        pname = pname.replace('module.', '')
         if 'init_block.weight' in pname:
             new_dict[pname] = convert_pdc(pdcs[0], p)
         elif 'block1_1.conv1.weight' in pname:
